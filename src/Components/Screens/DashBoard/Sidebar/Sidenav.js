@@ -43,7 +43,7 @@ const Sidenav = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                      <ListItemButton>
+                      <ListItemButton component="a" href="/dashboard/">
                         <ListItemIcon>
                         <img src={house} style={{display:flexbox,weight:32,height:32}}/>
                         </ListItemIcon>
@@ -52,7 +52,7 @@ const Sidenav = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                      <ListItemButton component="a" href="/bookmark">
+                      <ListItemButton component="a" href="/dashboard/bookmark">
                         <ListItemIcon>
                         <img src={bookmark} style={{display:flexbox,weight:32,height:32}}/>
                         </ListItemIcon>
@@ -61,7 +61,7 @@ const Sidenav = () => {
                     </ListItem>
 
                     <ListItem disablePadding>
-                      <ListItemButton component="a" href="/Course">
+                      <ListItemButton component="a" href="/dashboard/Course">
                       <ListItemIcon>
                           <img src={course} style={{display:flexbox,weight:32,height:32}}/>
                         </ListItemIcon>

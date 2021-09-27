@@ -10,19 +10,16 @@ class DashBoard extends Component {
   render() {
     return (
       <div>
-          <h1>asfeadf
-            </h1>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/dashboard/">
             <Home />
           </Route>
-          <Route path="/bookmark">
+          <Route exact path="/dashboard/bookmark">
             <Bookmark />
           </Route>
-          <Route path="/Course">
+          <Route exact path="/dashboard/course">
             <Course />
           </Route>
-          
         </Switch>
       </div>
     );
