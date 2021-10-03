@@ -1,20 +1,31 @@
-import React from "react";
-import Sidenav from "../Sidebar/Sidenav";
+import React, { Component } from "react";
 import { Grid } from "@mui/material";
+import styles from "./HomeCSS";
+import Greet from "./Greet/Greet";
+import CourseDetails from "./CourseDetails/CourseDetails";
+import MyCourses from "./MyCourses/MyCourses";
+import Stats from "./Stats/Stats";
 
-const Home = () => {
-  return (
-    <div className="">
-      <Grid container>
-        <Grid xs={6}>
-          <Sidenav />
+class Home extends Component {
+  render() {
+    return (
+      <Grid
+        sx={styles.container}
+        container
+        spacing={3}
+        justifyContent="space-between"
+      >
+        <Grid item xs={6}>
+          <Greet />
+          <MyCourses />
         </Grid>
-        <Grid xs={6}>
-          <h1>Home</h1>
+        <Grid item xs={6}>
+          <CourseDetails />
+          <Stats />
         </Grid>
       </Grid>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Home;

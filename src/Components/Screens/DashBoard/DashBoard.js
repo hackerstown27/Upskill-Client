@@ -1,49 +1,35 @@
-import { Component } from "react";
-import { Route, Switch } from "react-router-dom";
-
-import Home from "../DashBoard/Home/Home";
-import Bookmark from "../DashBoard/Bookmark/Bookmark";
-import Course from "../DashBoard/Course/Course";
+import React, { Component } from "react";
+import { Grid } from "@mui/material";
+import { Switch, Route } from "react-router-dom";
+import Menu from "./Menu/Menu";
+import Home from "./Home/Home";
+import Search from "./Search/Search";
+import Badges from "./Badges/Badges";
+import Bookmarks from "./Bookmarks/Bookmarks";
+import Account from "./Account/Account";
+import Logout from "./Logout/Logout";
 
 
 class DashBoard extends Component {
   render() {
     return (
-      <div>
-        <Switch>
-          <Route exact path="/dashboard/">
-            <Home />
-          </Route>
-          <Route exact path="/dashboard/bookmark">
-            <Bookmark />
-          </Route>
-          <Route exact path="/dashboard/course">
-            <Course />
-          </Route>
-        </Switch>
-      </div>
+      <Grid container>
+        <Grid item xs={0.75}>
+          <Menu {...this.props} />
+        </Grid>
+        <Grid item xs={11}>
+            <Switch>
+                <Route exact path="/dashboard/" component={Home} />
+                <Route exact path="/dashboard/search" component={Search} />
+                <Route exact path="/dashboard/badges" component={Badges} />
+                <Route exact path="/dashboard/bookmarks" component={Bookmarks} />
+                <Route exact path="/dashboard/account" component={Account} />
+                <Route exact path="/dashboard/logout" component={Logout} />
+            </Switch>
+        </Grid>
+      </Grid>
     );
   }
 }
 
 export default DashBoard;
-
-
-
-
-// import React from 'react'
-// import Sidenav from './Sidebar/Sidenav'
-// import Home from "./Home/Home";
-// import { Book } from "@mui/icons-material";
-
-// const Dashboard = () => {
-//     return (
-//         <div>
-            
-//             <Sidenav/>
-//         </div>
-//     )
-// }
-
-// export default Dashboard
-
