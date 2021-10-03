@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import styles from "./MyCoursesCSS";
 import { Typography, Stack, Pagination, Grid } from "@mui/material";
 import Card from "./Card/Card";
+import LottieAnimation from "../../../../LottieAnimation/LottieAnimation";
+import empty from "../../../../../Assets/Illustrations/empty.json";
 
 class MyCourses extends Component {
   constructor(props) {
@@ -19,7 +21,7 @@ class MyCourses extends Component {
           title: "React",
           author: "Maximilian Schwarzmüller",
           progress: 80,
-          rating: 3.5,
+          rating: 3,
           img: "https://reactjs.org/logo-og.png",
         },
         {
@@ -49,30 +51,45 @@ class MyCourses extends Component {
     return (
       <div style={styles.container}>
         <Typography sx={styles.heading}>My Courses</Typography>
-        <Grid sx={styles.courses} container spacing={2}>
-          {this.state.data
-            .slice(
-              (this.state.currPage - 1) * 3,
-              (this.state.currPage - 1) * 3 + 3
-            )
-            .map((details) => {
-              return (
-                <Grid item xs={4}>
-                  <Card {...details} />
-                </Grid>
-              );
-            })}
-        </Grid>
-        <Grid container spacing={2} justifyContent="center">
-          <Grid item>
-            <Pagination
-              count={Math.ceil(this.state.data.length / 3)}
-              variant="outlined"
-              shape="rounded"
-              onChange={this.onHandleChange}
-            />
-          </Grid>
-        </Grid>
+        {this.state.data.length == 0 ? (
+          <div>
+            <Grid container justifyContent="center" alignItems="center">
+              <Grid item xs={9}>
+                <LottieAnimation lotti={empty} height={350} width={350} />
+                <Typography style={styles.emptyHeading}>
+                  You have not enrolled in any course yet.
+                </Typography>
+              </Grid>
+            </Grid>
+          </div>
+        ) : (
+          <div>
+            <Grid sx={styles.courses} container spacing={2}>
+              {this.state.data
+                .slice(
+                  (this.state.currPage - 1) * 3,
+                  (this.state.currPage - 1) * 3 + 3
+                )
+                .map((details) => {
+                  return (
+                    <Grid item xs={4}>
+                      <Card {...details} />
+                    </Grid>
+                  );
+                })}
+            </Grid>
+            <Grid container spacing={2} justifyContent="center">
+              <Grid item>
+                <Pagination
+                  count={Math.ceil(this.state.data.length / 3)}
+                  variant="outlined"
+                  shape="rounded"
+                  onChange={this.onHandleChange}
+                />
+              </Grid>
+            </Grid>
+          </div>
+        )}
       </div>
     );
   }

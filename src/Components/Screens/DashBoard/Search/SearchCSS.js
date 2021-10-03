@@ -1,8 +1,6 @@
 let styles = {
     container: {
-        border: "1px solid grey",
-        borderRadius: "0.5rem",
-        padding: "1rem"
+        margin: "1rem"
     },
     heading: {
         fontFamily: "Poppins",
@@ -22,4 +20,5 @@ let styles = {
         fontWeight: 500
     }
 };
+
 export default styles;

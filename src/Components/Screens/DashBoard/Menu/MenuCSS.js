@@ -3,7 +3,7 @@ let styles = {
         height: "97vh",
         backgroundColor: "#3D56B2",
         borderRadius: "1rem",
-        color: "white"
+        color: "white",
     },
 }
 
