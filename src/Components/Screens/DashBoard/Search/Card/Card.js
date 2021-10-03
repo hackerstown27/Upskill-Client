@@ -12,7 +12,7 @@ import styles from "./CardCSS";
 
 function MyCard(props) {
   return (
-    <Card sx={{ maxWidth: 220 }}>
+    <Card sx={{ maxWidth: 220}}>
       <CardMedia
         component="img"
         height="150"
@@ -25,6 +25,7 @@ function MyCard(props) {
           gutterBottom
           variant="h5"
           component="div"
+          noWrap
         >
           {props.title}
         </Typography>
@@ -33,6 +34,7 @@ function MyCard(props) {
           sx={styles.subHeading}
           variant="body2"
           color="text.secondary"
+          noWrap
         >
           By {props.author}
         </Typography>
