@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./Components/Screens/Login/Login";
 import Register from "./Components/Screens/Register/Register";
 import ForgetPassword from "./Components/Screens/ForgetPassword/ForgetPassword";
-import DashBoard from "./Components/Screens/Dashboard/DashBoard";
+import DashBoard from "./Components/Screens/DashBoard/DashBoard"
 
 class App extends Component {
   render() {
